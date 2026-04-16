@@ -1040,6 +1040,31 @@ body {
     justify-content: center;
   }
 
+  /* CTA Upgrade Section Mobile Fix */
+  .upgrade-section {
+    height: 300px;
+    margin: 40px auto -150px;
+    border-radius: 15px;
+    width: 95%;
+  }
+
+  .upgrade-title {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .btn-solid-green, .btn-outline-white {
+    width: 150px;
+    height: 48px;
+    font-size: 16px;
+  }
+
   .footer-main {
     justify-content: center;
     align-items: center;
