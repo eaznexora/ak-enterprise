@@ -950,6 +950,8 @@ body {
   .precision-box {
     width: 100%;
     max-width: 548px;
+    height: auto;
+    padding: 30px 20px;
     margin: 0 auto;
   }
 }
