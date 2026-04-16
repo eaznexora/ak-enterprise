@@ -389,7 +389,7 @@ body {
   justify-content: center;
   margin-top: 40px;
   z-index: 10;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   padding: 0 20px;
 }
 
@@ -475,7 +475,7 @@ body {
    Our Core Services
    ========================================= */
 .services-section {
-  padding: 40px 20px 80px;
+  padding: 40px 20px 40px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -499,7 +499,7 @@ body {
    Built on Precision (Experience)
    ========================================= */
 .experience-section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   max-width: 1344px;
   margin: 0 auto;
 }
@@ -551,7 +551,7 @@ body {
    Spaces Transformed (Masonry exact match)
    ========================================= */
 .works-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -586,7 +586,7 @@ body {
    Why Choose Us (Precision Grid)
    ========================================= */
 .precision-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   max-width: 1150px;
   margin: 0 auto;
 }
@@ -634,7 +634,7 @@ body {
    Testimonials
    ========================================= */
 .testimonials-container {
-  padding: 100px 20px;
+  padding: 100px 20px 40px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -773,7 +773,7 @@ body {
 /* =========================================
    Upgrade Block
    ========================================= */
-.upgrade-section { position: relative; z-index: 10; width: 100%; max-width: 1344px; height: 361px; border-radius: 20px; margin: 150px auto -180px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.upgrade-section { position: relative; z-index: 10; width: 100%; max-width: 1344px; height: 361px; border-radius: 20px; margin: 80px auto -180px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
 .upgrade-overlay {
   position: absolute;
@@ -968,13 +968,30 @@ body {
   /* Show mobile dynamic island */
 
   .hero-title {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 32px;
+    line-height: 40px;
   }
 
   .hero-title span {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero-buttons {
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .btn-primary-large, .btn-outline-large {
+    width: 160px;
+    height: 48px;
+    font-size: 16px;
   }
 
   .stats-bar {
