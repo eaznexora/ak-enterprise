@@ -566,6 +566,10 @@ body {
   aspect-ratio: 1222 / 679;
 }
 
+.mobile-bento {
+  display: none;
+}
+
 .work-box {
   position: absolute;
   border-radius: 10px;
@@ -1195,10 +1199,15 @@ body {
     height: 350px;
   }
 
-  .works-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  .desktop-bento {
+    display: none;
+  }
+
+  .mobile-bento {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 12px;
     height: auto;
     aspect-ratio: auto;
   }
@@ -1208,8 +1217,14 @@ body {
     left: auto !important;
     top: auto !important;
     width: 100% !important;
-    height: 250px !important;
+    height: 100% !important;
+    min-height: 150px;
   }
+
+  /* Mobile Grid Item Rules (mw-1 to mw-7) */
+  .mw-1 { grid-column: span 2; height: 210px !important; }
+  .mw-2, .mw-7, .mw-4, .mw-5 { grid-column: span 1; height: 155px !important; }
+  .mw-3, .mw-6 { grid-column: span 1; grid-row: span 2; height: 322px !important; }
 
   .testimonials-inner {
     flex-direction: column;
