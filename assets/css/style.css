@@ -1194,9 +1194,11 @@ body {
 
   .service-card {
     width: 100%;
-    max-width: 350px;
+    max-width: 292px;
+    height: auto;
+    aspect-ratio: 292 / 442;
     margin: 0 auto;
-    height: 350px;
+    border-radius: 10px;
   }
 
   .desktop-bento {
@@ -1222,9 +1224,25 @@ body {
   }
 
   /* Mobile Grid Item Rules (mw-1 to mw-7) */
-  .mw-1 { grid-column: span 2; height: 210px !important; }
-  .mw-2, .mw-7, .mw-4, .mw-5 { grid-column: span 1; height: 155px !important; }
-  .mw-3, .mw-6 { grid-column: span 1; grid-row: span 2; height: 322px !important; }
+  .mw-1 {
+    grid-column: span 2;
+    height: 210px !important;
+  }
+
+  .mw-2,
+  .mw-7,
+  .mw-4,
+  .mw-5 {
+    grid-column: span 1;
+    height: 155px !important;
+  }
+
+  .mw-3,
+  .mw-6 {
+    grid-column: span 1;
+    grid-row: span 2;
+    height: 322px !important;
+  }
 
   .testimonials-inner {
     flex-direction: column;
