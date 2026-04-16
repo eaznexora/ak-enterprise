@@ -1248,6 +1248,44 @@ body {
     text-align: center;
   }
 
+  /* Experience Section Mobile Fix */
+  /* Standardized Section Headers Mobile Fix */
+  .section-title {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    text-align: center;
+    margin-bottom: 10px !important;
+  }
+
+  .section-subtitle {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    text-align: center;
+    margin-bottom: 30px !important;
+    padding: 0 15px;
+  }
+
+  .experience-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .exp-content {
+    text-align: center;
+    width: 100%;
+  }
+
+  .exp-headline {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .exp-text {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+
   .f-links {
     justify-content: center;
   }
