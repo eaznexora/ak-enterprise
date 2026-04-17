@@ -1044,6 +1044,25 @@ body {
   font-size: 13px;
   color: var(--white);
   text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.f-credit-link {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.f-credit-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.f-separator {
+  margin: 0 15px;
 }
 
 /* =========================================
@@ -1373,6 +1392,17 @@ body {
   }
 
   .footer {
-    padding-bottom: 85px !important;
+    padding-bottom: 70px !important;
+  }
+
+  .f-copy {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .f-separator {
+    display: none;
   }
 }
