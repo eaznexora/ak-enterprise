@@ -87,11 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const servicesSection = document.querySelector('.services-section');
             const servicesOffset = servicesSection ? servicesSection.offsetTop : 100;
+            const whatsappBtn = document.querySelector('.whatsapp-float');
             
             if (window.scrollY > servicesOffset) {
                 scrollTopBtn.classList.add('visible');
+                if (whatsappBtn) whatsappBtn.classList.add('shifted');
             } else {
                 scrollTopBtn.classList.remove('visible');
+                if (whatsappBtn) whatsappBtn.classList.remove('shifted');
             }
 
             // Calculate Scroll Progress
