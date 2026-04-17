@@ -1054,7 +1054,7 @@ body {
    ========================================= */
 .whatsapp-float {
   position: fixed;
-  bottom: 105px;
+  bottom: 30px;
   right: 30px;
   width: 60px;
   height: 60px;
@@ -1064,9 +1064,13 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: all 0.3s ease;
+  z-index: 1001;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
+}
+
+.whatsapp-float.shifted {
+  bottom: 105px;
 }
 
 .whatsapp-float:hover {
