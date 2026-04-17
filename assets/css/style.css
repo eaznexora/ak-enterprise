@@ -1371,4 +1371,8 @@ body {
     flex-direction: column;
     text-align: center;
   }
+
+  .footer {
+    padding-bottom: 85px !important;
+  }
 }
