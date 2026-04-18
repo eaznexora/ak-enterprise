@@ -1,0 +1,161 @@
+/* 
+   =========================================
+   Advanced Animations & Interactive UI
+   Project: AK Enterprise
+   ========================================= 
+*/
+
+:root {
+  --anim-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --anim-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --anim-speed-fast: 0.3s;
+  --anim-speed-med: 0.5s;
+  --anim-speed-slow: 1.5s;
+}
+
+/* --- Hero Background Zoom Animation --- */
+@keyframes heroBackgroundZoom {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.hero {
+  animation: heroBackgroundZoom var(--anim-speed-slow) var(--anim-ease-in-out) forwards;
+  overflow: hidden;
+}
+
+/* --- Dynamic Island Smooth Morph --- */
+.floating-header, .dynamic-island {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+/* --- Header Morphing Logic --- */
+
+.header-pill-state {
+  width: 120px !important;
+  height: 40px !important;
+  border-radius: 40px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.header-pill-state .header-content,
+.header-pill-state .nav-links,
+.header-pill-state .dynamic-island-info,
+.header-pill-state .btn-quote,
+.header-pill-state .hamburger-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Expansion transition */
+/* Expansion transition will be slightly different for a natural bounce */
+.floating-header, .dynamic-island {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+/* --- Scroll Reveal Animations --- */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s var(--anim-bounce);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal Variations */
+.reveal-left { transform: translateX(-30px); }
+.reveal-right { transform: translateX(30px); }
+.reveal-zoom { transform: scale(0.95); }
+
+/* Staggered Delay Utilities */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* --- Premium Hover Effects --- */
+
+/* Image Hover: Smooth Zoom + Soft Sheen */
+.hover-zoom {
+  overflow: hidden;
+  position: relative;
+}
+
+.hover-zoom img, 
+.service-card, 
+.work-box,
+.testimonial-img-card {
+  transition: transform var(--anim-speed-med) var(--anim-ease-in-out), filter var(--anim-speed-med) ease !important;
+}
+
+.service-card:hover, 
+.work-box:hover {
+  transform: translateY(-8px) scale(1.02);
+  filter: brightness(1.1);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+}
+
+.testimonial-img-card {
+  transition: transform var(--anim-speed-med) var(--anim-bounce) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.testimonial-img-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Specific PNG Image Hover (no bg box) */
+.rounded-image, .stat-item img {
+  transition: transform var(--anim-speed-med) var(--anim-bounce) !important;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+.rounded-image:hover, .stat-item:hover img {
+  transform: translateY(-8px) scale(1.05);
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.2));
+}
+
+.stat-item {
+  cursor: pointer;
+}
+
+/* Button Hover: Magnetic Lift & Glow */
+.btn-solid-green, .btn-primary-large, .btn-quote, .btn-outline-white, .btn-outline-large {
+  position: relative;
+  transition: all var(--anim-speed-fast) var(--anim-bounce) !important;
+}
+
+.btn-solid-green:hover, .btn-primary-large:hover, .btn-quote:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(71, 164, 66, 0.4) !important;
+}
+
+.btn-outline-white:hover, .btn-outline-large:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 8px 15px rgba(255,255,255,0.1) !important;
+}
+
+/* Page Load Sequence */
+@keyframes islandMorph {
+  0% { transform: translate(-50%, -20px) scale(0.5); opacity: 0; }
+  100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+}
+
+.dynamic-island.animate-load {
+  animation: islandMorph var(--anim-speed-med) var(--anim-bounce) forwards;
+}
