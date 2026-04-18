@@ -5,38 +5,43 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Initial Header Morphing Sequence
+    // 1. Initial Header Morphing Sequence (Stabilized for Zero-Shift)
     const header = document.getElementById('header');
     const dynamicIsland = document.getElementById('dynamicIsland');
 
     if (header || dynamicIsland) {
-        // Since we now preload 'header-pill-state' in HTML to prevent flicker,
-        // we just need to remove it to trigger expansion
+        // Step A: Show the pill (ghosting phase)
+        setTimeout(() => {
+            if (header) header.classList.add('is-ready');
+            if (dynamicIsland) dynamicIsland.classList.add('is-ready');
+        }, 100);
+
+        // Step B: Expand to full bar
         setTimeout(() => {
             if (header) {
                 header.classList.remove('header-pill-state');
+                header.classList.remove('is-ready'); // Clean up
             }
             if (dynamicIsland) {
                 dynamicIsland.classList.remove('header-pill-state');
+                dynamicIsland.classList.remove('is-ready');
                 dynamicIsland.classList.add('animate-load');
             }
-        }, 500); // 500ms delay for a more professional paced entrance
+        }, 800); 
     }
 
-    // 2. Intersection Observer for REVERSIBLE Scroll Reveals
+    // 2. Intersection Observer with HYSTERESIS (Anti-Flicker Logic)
     const revealOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: [0, 0.1], // Trigger much earlier
+        rootMargin: '0px 0px 50px 0px' // Start reveal BEFORE it hits the viewport
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            // HYSTERESIS: Snappy trigger for in vs out
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.05) {
                 entry.target.classList.add('animate-in');
-            } else {
-                // REVERSIBLE: Remove the class when leaving viewport
-                // BUT skip this for items we want to keep once revealed (optional)
-                // For now, making it fully reversible as requested
+            } else if (!entry.isIntersecting) {
                 entry.target.classList.remove('animate-in');
             }
         });
